@@ -30,7 +30,7 @@ Just clone and install this demo.
 
 > `"cordova-android": "6.3.0"`
 
-`cordova plugin add cordova-plugin-app-update --save`
+`cordova plugin add https://github.com/MrLrx/cordova-plugin-app-update.git`
 
 # Usage
 

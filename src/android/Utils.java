@@ -8,10 +8,12 @@ import org.json.JSONObject;
  */
 public class Utils {
 
-    static JSONObject makeJSON(String url, String describe, int localversion, int version, int code, Object msg) {
+    static JSONObject makeJSON(String ver, String packgeNum, String url, String describe, int localversion, int version, int code, Object msg) {
         JSONObject json = new JSONObject();
 
         try {
+            json.put("ver", ver);
+            json.put("packgeNum", packgeNum);
             json.put("url", url);
             json.put("describe", describe);
             json.put("localversion", localversion);

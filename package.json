@@ -1,28 +1,26 @@
 {
-  "_from": "cordova-plugin-app-update",
+  "_from": "git+https://github.com/MrLrx/cordova-plugin-app-update.git",
   "_id": "cordova-plugin-app-update@2.0.2",
   "_inBundle": false,
-  "_integrity": "sha512-JQLTdkFZ9nViV0WS7VD4WYKPj7WItDhxj/cwHW28+T1enYuISBKjMW6wm+X9wNd40oOY58KrH040sv0fIPvUTA==",
+  "_integrity": "",
   "_location": "/cordova-plugin-app-update",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "cordova-plugin-app-update",
-    "name": "cordova-plugin-app-update",
-    "escapedName": "cordova-plugin-app-update",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
+    "type": "git",
+    "raw": "https://github.com/MrLrx/cordova-plugin-app-update.git",
+    "rawSpec": "https://github.com/MrLrx/cordova-plugin-app-update.git",
+    "saveSpec": "git+https://github.com/MrLrx/cordova-plugin-app-update.git",
+    "fetchSpec": "https://github.com/MrLrx/cordova-plugin-app-update.git",
+    "gitCommittish": null
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/cordova-plugin-app-update/-/cordova-plugin-app-update-2.0.2.tgz",
+  "_resolved": "git+https://github.com/MrLrx/cordova-plugin-app-update.git#2bfc145ea2f90e7f3d0a274a91131edd084100a8",
   "_shasum": "9a1ed9c890273901601f63c7d1ef572697c7e981",
-  "_spec": "cordova-plugin-app-update",
-  "_where": "C:\\Users\\admin\\Desktop\\EFOS-APP\\EFOS-Test\\efos_app_v4",
+  "_spec": "https://github.com/MrLrx/cordova-plugin-app-update.git",
+  "_where": "D:\\HYD-APP\\EFOS_Toilet",
   "author": {
     "name": "vaenow"
   },

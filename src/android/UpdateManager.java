@@ -84,12 +84,14 @@ public class UpdateManager {
             int versionCodeLocal = version.getLocal();
             int versionCodeRemote = version.getRemote();
             String describe = checkUpdateThread.getMHashMap().get("remark");
+            String packgeNum = checkUpdateThread.getMHashMap().get("name");
+            String ver = checkUpdateThread.getMHashMap().get("ver");
             String url = checkUpdateThread.getMHashMap().get("url");
             switch (msg.what) {
                 case Constants.NETWORK_ERROR:
                     //暂时隐藏错误
                     //msgBox.showErrorDialog(errorDialogOnClick);
-                    callbackContext.error(Utils.makeJSON(url, describe, versionCodeLocal, versionCodeRemote, Constants.NETWORK_ERROR, "network error"));
+                    callbackContext.error(Utils.makeJSON(ver, packgeNum, url, describe, versionCodeLocal, versionCodeRemote, Constants.NETWORK_ERROR, "network error"));
                     break;
                 case Constants.VERSION_COMPARE_START:
                     compareVersions();
@@ -101,25 +103,25 @@ public class UpdateManager {
                     isDownloading = false;
                     break;
                 case Constants.VERSION_UPDATING:
-                    callbackContext.success(Utils.makeJSON(url, describe, versionCodeLocal, versionCodeRemote, Constants.VERSION_UPDATING, "success, version updating."));
+                    callbackContext.success(Utils.makeJSON(ver, packgeNum, url, describe, versionCodeLocal, versionCodeRemote, Constants.VERSION_UPDATING, "success, version updating."));
                     break;
                 case Constants.VERSION_NEED_UPDATE:
-                    callbackContext.success(Utils.makeJSON(url, describe, versionCodeLocal, versionCodeRemote, Constants.VERSION_NEED_UPDATE, "success, need date."));
+                    callbackContext.success(Utils.makeJSON(ver, packgeNum, url, describe, versionCodeLocal, versionCodeRemote, Constants.VERSION_NEED_UPDATE, "success, need date."));
                     break;
                 case Constants.VERSION_UP_TO_UPDATE:
-                    callbackContext.success(Utils.makeJSON(url, describe, versionCodeLocal, versionCodeRemote, Constants.VERSION_UP_TO_UPDATE, "success, up to date."));
+                    callbackContext.success(Utils.makeJSON(ver, packgeNum, url, describe, versionCodeLocal, versionCodeRemote, Constants.VERSION_UP_TO_UPDATE, "success, up to date."));
                     break;
                 case Constants.VERSION_COMPARE_FAIL:
-                    callbackContext.error(Utils.makeJSON(url, describe, versionCodeLocal, versionCodeRemote,Constants.VERSION_COMPARE_FAIL, "version compare fail"));
+                    callbackContext.error(Utils.makeJSON(ver, packgeNum, url, describe, versionCodeLocal, versionCodeRemote,Constants.VERSION_COMPARE_FAIL, "version compare fail"));
                     break;
                 case Constants.VERSION_RESOLVE_FAIL:
-                    callbackContext.error(Utils.makeJSON(url, describe, versionCodeLocal, versionCodeRemote,Constants.VERSION_RESOLVE_FAIL, "version resolve fail"));
+                    callbackContext.error(Utils.makeJSON(ver, packgeNum, url, describe, versionCodeLocal, versionCodeRemote,Constants.VERSION_RESOLVE_FAIL, "version resolve fail"));
                     break;
                 case Constants.REMOTE_FILE_NOT_FOUND:
-                    callbackContext.error(Utils.makeJSON(url, describe, versionCodeLocal, versionCodeRemote,Constants.REMOTE_FILE_NOT_FOUND, "remote file not found"));
+                    callbackContext.error(Utils.makeJSON(ver, packgeNum, url, describe, versionCodeLocal, versionCodeRemote,Constants.REMOTE_FILE_NOT_FOUND, "remote file not found"));
                     break;
                 default:
-                    callbackContext.error(Utils.makeJSON(url, describe, versionCodeLocal, versionCodeRemote,Constants.UNKNOWN_ERROR, "unknown error"));
+                    callbackContext.error(Utils.makeJSON(ver, packgeNum, url, describe, versionCodeLocal, versionCodeRemote,Constants.UNKNOWN_ERROR, "unknown error"));
             }
 
         }
@@ -142,7 +144,7 @@ public class UpdateManager {
     public void permissionDenied(String errMsg) {
         LOG.d(TAG, "permissionsDenied..");
 
-        callbackContext.error(Utils.makeJSON("无", "无", 1, 1, Constants.PERMISSION_DENIED, errMsg));
+        callbackContext.error(Utils.makeJSON("无", "无","无", "无", 1, 1, Constants.PERMISSION_DENIED, errMsg));
     }
 
     /**

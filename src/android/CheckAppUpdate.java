@@ -30,7 +30,7 @@ public class CheckAppUpdate extends CordovaPlugin {
             return true;
         }
 
-        callbackContext.error(Utils.makeJSON("无", "无", 1, 1, Constants.NO_SUCH_METHOD, "No such method: " + action));
+        callbackContext.error(Utils.makeJSON("无", "无", "无", "无", 1, 1, Constants.NO_SUCH_METHOD, "No such method: " + action));
         return false;
     }
 

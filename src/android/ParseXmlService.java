@@ -36,9 +36,13 @@ public class ParseXmlService {
                 if ("version".equals(childElement.getNodeName())) {
                     hashMap.put("version", childElement.getFirstChild().getNodeValue());
                 }
-                //软件名称
+                //软件大小
                 else if (("name".equals(childElement.getNodeName()))) {
                     hashMap.put("name", childElement.getFirstChild().getNodeValue());
+                }
+                //软件大小
+                else if (("ver".equals(childElement.getNodeName()))) {
+                    hashMap.put("ver", childElement.getFirstChild().getNodeValue());
                 }
                 //下载地址
                 else if (("url".equals(childElement.getNodeName()))) {
